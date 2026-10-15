@@ -53,6 +53,8 @@ yarn build
 bun run lint
 ```
 
+Script names containing dots, such as `build.prod`, are supported.
+
 Inline Markdown commands are also detected:
 
 ```md

@@ -9,6 +9,7 @@ describe("parseDocumentedCommands", () => {
 pnpm test
 yarn build
 bun run lint
+npm run build.prod
 \`\`\`
 `);
 
@@ -16,7 +17,8 @@ bun run lint
       "npm:check",
       "pnpm:test",
       "yarn:build",
-      "bun:lint"
+      "bun:lint",
+      "npm:build.prod"
     ]);
   });
 });

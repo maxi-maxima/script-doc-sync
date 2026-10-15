@@ -53,6 +53,8 @@ yarn build
 bun run lint
 ```
 
+支持包含点号的 script 名称，例如 `build.prod`。
+
 也会检测 inline Markdown 命令：
 
 ```md

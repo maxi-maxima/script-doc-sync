@@ -6,7 +6,7 @@ export function parseDocumentedCommands(markdown: string): DocumentedCommand[] {
   const lines = markdown.split(/\r?\n/);
 
   lines.forEach((line, index) => {
-    for (const match of line.matchAll(/\b(npm|pnpm|yarn|bun)\s+(?:run\s+)?([A-Za-z0-9:_-]+)\b/g)) {
+    for (const match of line.matchAll(/\b(npm|pnpm|yarn|bun)\s+(?:run\s+)?([A-Za-z0-9:_.-]+)\b/g)) {
       const manager = match[1] as DocumentedCommand["manager"];
       const script = normalizeScript(manager, match[2]);
       const key = `${manager}:${script}:${index + 1}:${match[0]}`;

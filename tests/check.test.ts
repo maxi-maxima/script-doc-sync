@@ -40,4 +40,11 @@ describe("checkScriptDocs", () => {
       })
     );
   });
+
+  it("matches documented script names containing dots", () => {
+    const report = checkScriptDocs({ "build.prod": "vite build --mode production" }, "Run `npm run build.prod`.");
+
+    expect(report.documented).toContainEqual(expect.objectContaining({ script: "build.prod" }));
+    expect(report.findings).toHaveLength(0);
+  });
 });
